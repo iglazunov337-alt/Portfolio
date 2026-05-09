@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог | Ілля ГЛАЗУНОВ</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Твій Less -->
+    <link rel="stylesheet/less" type="text/css" href="css/style.less">
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+    
+    <style>
+        /* --- ОНОВЛЕНА ВЕРХУШКА ДЛЯ ОДНОСТАЙНОСТІ --- */
+        .navbar { 
+            background-color: #2E75B6 !important; 
+            min-height: 100px; 
+            display: flex;
+            align-items: center;
+            padding: 0 !important;
+            border: none !important;
+        }
+
+        .navbar-brand { 
+            color: #ffcc00 !important; 
+            font-size: 2.8rem !important; 
+            margin: 0 !important;
+            display: flex;
+            align-items: center;
+            letter-spacing: -1px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .custom-btn-style {
+            color: white !important;
+            font-weight: bold;
+            padding: 10px 22px !important;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .custom-btn-style:hover, .custom-btn-style.active {
+            background-color: #ffcc00 !important;
+            color: #333 !important;
+            border-color: #ffcc00 !important;
+        }
+
+        @media (min-width: 992px) {
+            .navbar .container { display: flex !important; justify-content: space-between !important; align-items: center !important; }
+            .navbar-collapse { display: flex !important; justify-content: flex-end !important; }
+        }
+        @media (max-width: 991px) {
+            .navbar { padding: 15px 0 !important; }
+            .navbar .container { flex-direction: column !important; align-items: center !important; }
+            .navbar-brand { font-size: 2.2rem !important; margin-bottom: 10px !important; }
+        }
+
+        /* --- ТВОЇ ОРИГІНАЛЬНІ СТИЛІ БЛОГУ (БЕЗ ЗМІН) --- */
+        body { 
+            background-color: #2b5d8c; 
+            color: white; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column;
+            margin: 0;
+        }
+
+        .section-title {
+            color: #ffcc00;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+
+        .blog-card { 
+            border: none; 
+            border-radius: 15px; 
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .sidebar-card { 
+            border: none; 
+            border-radius: 10px; 
+            overflow: hidden; 
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .card-header {
+            background-color: #ffcc00 !important;
+            color: #333 !important;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            border: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ОНОВЛЕНА ВЕРХУШКА -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase" href="index.html">CreativePortfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav gap-3 text-center ms-auto">
+                    <li class="nav-item"><a class="custom-btn-style" href="index.html">Головна</a></li>
+                    <li class="nav-item"><a class="custom-btn-style" href="portfolio.html">Портфоліо</a></li>
+                    <li class="nav-item"><a class="custom-btn-style active" href="blog.html">Блог</a></li>
+                    <li class="nav-item"><a class="custom-btn-style" href="contact.html">Контакти</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row">
+            <!-- КОЛОНКА З ПОСТАМИ -->
+            <div class="col-md-8">
+                <h2 class="section-title">ОСТАННІ ЗАПИСИ</h2>
+                
+                <!-- Пост 1 -->
+                <div class="card blog-card text-dark p-3">
+                    <div class="card-body">
+                        <h4 class="fw-bold">Як я вивчив CSS за 30 днів</h4>
+                        <p class="text-muted small">15 квітня 2026</p>
+                        <p>Мій шлях у веб-розробку розпочався з простого бажання зрозуміти, як працюють стилі. За цей місяць я пройшов шлях від звичайних селекторів до складних сіток та анімацій.</p>
+                        <a href="#" class="btn btn-primary rounded-pill px-4">Читати далі</a>
+                    </div>
+                </div>
+
+                <!-- Пост 2 -->
+                <div class="card blog-card text-dark p-3">
+                    <div class="card-body">
+                        <h4 class="fw-bold">Маркетингові стратегії 2026</h4>
+                        <p class="text-muted small">20 квітня 2026</p>
+                        <p>Аналіз сучасного ринку показує, що персоналізація контенту стає ключовим фактором успіху. Розглядаємо кейси провідних брендів та їх підходи до аудиторії.</p>
+                        <a href="#" class="btn btn-primary rounded-pill px-4">Читати далі</a>
+                    </div>
+                </div>
+
+                <!-- Пост 3 -->
+                <div class="card blog-card text-dark p-3">
+                    <div class="card-body">
+                        <h4 class="fw-bold">Регіональна економіка та її розвиток</h4>
+                        <p class="text-muted small">25 квітня 2026</p>
+                        <p>Дослідження факторів економічного росту в нашому регіоні. Як територіальна організація виробництва впливає на добробут населення.</p>
+                        <a href="#" class="btn btn-primary rounded-pill px-4">Читати далі</a>
+                    </div>
+                </div>
+
+                <!-- Пост 4 -->
+                <div class="card blog-card text-dark p-3">
+                    <div class="card-body">
+                        <h4 class="fw-bold">Основи ділових комунікацій</h4>
+                        <p class="text-muted small">1 травня 2026</p>
+                        <p>Правильне ведення документації та етика професійного спілкування — це фундамент кар'єри будь-якого спеціаліста. Розбираємо стандарти ДСТУ.</p>
+                        <a href="#" class="btn btn-primary rounded-pill px-4">Читати далі</a>
+                    </div>
+                </div>
+
+                <!-- Пост 5 -->
+                <div class="card blog-card text-dark p-3">
+                    <div class="card-body">
+                        <h4 class="fw-bold">UI/UX дизайн: майбутнє інтерфейсів</h4>
+                        <p class="text-muted small">5 травня 2026</p>
+                        <p>Чому мінімалізм залишається в тренді та як створювати інтерфейси, які будуть інтуїтивно зрозумілими для кожного користувача.</p>
+                        <a href="#" class="btn btn-primary rounded-pill px-4">Читати далі</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- САЙДБАР -->
+            <div class="col-md-4">
+                <div class="card sidebar-card text-dark">
+                    <div class="card-header">КАТЕГОРІЇ</div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Веб-дизайн <span class="badge bg-warning text-dark rounded-pill">12</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Маркетинг <span class="badge bg-warning text-dark rounded-pill">8</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Економіка <span class="badge bg-warning text-dark rounded-pill">5</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card sidebar-card text-dark">
+                    <div class="card-header">ПРО АВТОРА</div>
+                    <div class="card-body text-center">
+                        <h6 class="fw-bold mb-1">Ілля ГЛАЗУНОВ</h6>
+                        <p class="card-text small text-muted">Студент КНУ, група М-25. Майбутній маркетолог та веб-ентузіаст.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-4 text-center text-white mt-auto" style="background-color: #0b1120; border-top: 1px solid rgba(255,255,255,0.1);">
+        <div class="container">
+            <p class="mb-0">© 2026 Ілля ГЛАЗУНОВ | КНУ, група М-25</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

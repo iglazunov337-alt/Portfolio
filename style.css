@@ -1,0 +1,1139 @@
+/* Базовые настройки */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: #f4f7f6;
+}
+
+/* Шапка с градиентом */
+header {
+    background: linear-gradient(90deg, #1a3c5e, #2e75b6);
+    color: white;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Меню */
+/* Рядок 20 приблизно */
+nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: 0.3s ease; /* Щоб колір змінювався плавно */
+}
+
+/* Додай це ПІСЛЯ nav a */
+nav a:hover {
+    background-color: #ffcc00; /* Жовта рамка при наведенні */
+    color: #1a3c5e;           /* Темний текст */
+}
+
+/* ЦЕ ТВОЄ ЗАВДАННЯ №1 */
+nav a:active {
+    background-color: #1a4d7a !important; /* Темно-синій фон при натисканні */
+    color: #ffffff !important;           /* Білий текст, щоб було видно */
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.5); /* Внутрішня тінь (затемнення) */
+}
+
+
+/* Эффект при наведении курсора */
+nav a:hover {
+    background-color: #ffcc00;
+    color: #1a3c5e;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #003366; /* Темно-синій фон як на макеті */
+    color: #ffffff;            /* Білий колір тексту */
+    margin-bottom: 30px;
+}
+
+/* Золотиста кнопка як на зразку */
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #d4a76a; /* Золотистий колір */
+    color: #000000;            /* Чорний текст на кнопці */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.accent {
+    color: #2e75b6;
+    font-weight: bold;
+}/* Сетка для портфолио */
+.grid-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 50px 0;
+}
+
+/* Стиль карточки проекта */
+.project-card {
+    background: white;
+    width: 280px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px); /* Эффект всплытия при наведении */
+}
+
+.project-img {
+    height: 160px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Цветные блоки-заглушки */
+.color-1 { background: #2e75b6; }
+.color-2 { background: #ff6b6b; }
+.color-3 { background: #4ecdc4; }
+/* Стиль для картки "Про мене" */
+.about-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-top: -50px; /* Трохи накладаємо на hero-блок для стилю */
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+/* Кнопка заклику до дії */
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #2e75b6;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #245c8d;
+    transform: scale(1.05);
+}/* Новий синій Hero блок */
+.hero-blue {
+    background-color: #003366;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.accent-gold { color: #d4a76a; }
+
+.cta-button-gold {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #d4a76a;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Сітка для розділу Про мене */
+.about-grid {
+    display: flex;
+    gap: 50px;
+    padding: 40px 0;
+    text-align: left;
+}
+
+.separator {
+    border: 1px solid #d4a76a;
+    width: 750px;
+    margin: 10px 0 20px 0;
+}
+
+.skill-tag {
+    display: inline-block;
+    background: #2e75b6;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin: 5px 2px;
+    font-size: 0.9em;
+}
+
+.hobby-list { list-style: none; padding: 0; line-height: 2; }
+/* Центрування тексту в розділі Про мене */
+.about-card, .about-text {
+    text-align: center;      /* Вирівнює текст по центру */
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* Центрує блоки всередині, якщо це flex */
+}
+
+.about-text p {
+    max-width: 800px;        /* Щоб текст не розтягувався занадто сильно */
+    margin: 10px auto;       /* Центрує самі абзаци */
+}
+
+.separator {
+    margin: 10px auto 20px auto; /* Центрує лінію під заголовком */
+
+}/* Стиль для головного логотипа в шапці */
+.logo {
+    font-size: 32px;           /* Робимо напис більшим */
+    font-weight: 900;           /* Максимальна жирність */
+    color: #ffcc00 !important;  /* Яскраво-жовтий колір */
+    text-transform: uppercase;  /* Усі літери великі */
+    letter-spacing: 1px;        /* Відступ між літерами */
+    display: inline-block;
+}
+
+/* Якщо всередині логотипа є span (наприклад, для слова Portfolio) */
+.logo span {
+    color: #ffffff;             /* Можна залишити другу частину білою для контрасту */
+    font-weight: 300;           /* Або зробити її тоншою, щоб було стильно */
+}
+/* --- СТИЛІ ДЛЯ СТОРІНКИ БЛОГУ --- */
+
+/* Створення сітки Flexbox для двох колонок */
+.blog-layout {
+    display: flex;
+    gap: 40px;      /* Відступ між колонками */
+    padding: 40px 0;
+    align-items: flex-start; /* Щоб бокова панель не розтягувалася по висоті */
+}
+
+/* Ліва колонка (основна) */
+.blog-main {
+    flex: 3;        /* Займає 3 частини простору */
+}
+
+/* Права колонка (бокова) */
+.blog-sidebar {
+    flex: 1;        /* Займає 1 частину простору */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;      /* Відступ між блоками в сайдбарі */
+}
+
+/* Заголовок "Блог" */
+.blog-title {
+    font-size: 32px;
+    color: #003366; /* Темно-синій */
+    margin-bottom: 30px;
+    text-align: left;
+    padding-left: 30px;
+}
+
+/* Картка поста */
+.blog-card {
+    background-color: #f4f7f6; /* Світло-сірий фон як на макеті */
+    padding: 30px;
+    border-radius: 15px;      /* Закруглені кути */
+    margin-bottom: 25px;      /* Відступ між картками */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03); /* Легка тінь */
+}
+
+.blog-card h2 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.post-date {
+    font-size: 0.85em;
+    color: #888;              /* Сірий колір для дати */
+    margin: 0;
+}
+
+.read-more {
+    display: inline-block;
+    color: #2e75b6;           /* Синій колір посилання */
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.read-more:hover {
+    color: #003366;
+    text-decoration: underline;
+}
+
+/* Стилі для блоків бокової панелі */
+.sidebar-block {
+    background-color: #ffffff; /* Білий фон для блоків */
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #eee;   /* Тонка рамка */
+}
+
+.sidebar-block h3 {
+    font-size: 18px;
+    color: #003366;
+    margin: 0 0 10px 0;
+}
+
+.sidebar-hr {
+    border: none;
+    border-top: 1px solid hsl(35, 55%, 62%); /* Золотиста лінія */
+    width: 50px;
+    margin: 10px 0 15px 0;
+}
+
+.sidebar-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-block ul li {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.sidebar-block ul li a {
+    text-decoration: none;
+    color: #2e75b6;
+}
+
+.sidebar-block ul li a:hover {
+    text-decoration: underline;
+}
+/* Делаем линию длинной и направленной вправо */
+.blog-main .sidebar-hr {
+    border: none;
+    border-top: 2px solid hsl(35, 55%, 62%); /* Цвет как у логотипа */
+    width: 100%;                  /* Линия растянется на всю ширину колонки */
+    max-width: 900px;             /* Но не более 600px (можешь менять это число) */
+    margin-left: 30px;            /* Тот самый отступ, чтобы было под текстом */
+    margin-top: -10px;            /* Подвинуть ближе к заголовку Блог */
+    margin-bottom: 30px;          /* Отступ до первого поста */
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero p {
+    animation: fadeInDown 1s ease-out 0.3s both; /* Затримка 0.3с */
+}
+
+.hero .btn {
+    animation: fadeInDown 1s ease-out 0.6s both; /* Затримка 0.6с */
+}
+
+/* --- Спиннер (Загрузчик) --- */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e0e0e0;
+    border-top: 4px solid #2E75B6; /* Синий цвет как в шапке */
+    border-radius: 50%;
+    animation: spin 1s linear infinite; /* Крутится вечно */
+    margin: 20px auto;
+}
+
+/* --- Всплывающий баннер --- */
+@keyframes popupShow {
+    0% { opacity: 0; transform: translate(-50%, 20px); }
+    15% { opacity: 1; transform: translate(-50%, 0); }
+    85% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, 20px); }
+}
+
+.popup-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1a4d7a;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    animation: popupShow 6s ease forwards; /* Появится на 6 секунд и исчезнет */
+    z-index: 1000;
+}
+/* Базовий стиль картки та ефект підняття */
+.project-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавність підняття */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Картка піднімається вгору */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2); /* Додаємо тінь */
+}
+
+/* Контейнер для зображення та напис [ зображення ] */
+.card-image {
+    position: relative;
+    height: 200px;
+    background: #6c63ff; /* Колір для першої картки, можна міняти індивідуально */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+}
+/* Робимо сітку для карток, щоб вони стояли в ряд */
+.projects-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Рядок 425 приблизно */
+.project-card {
+    position: relative;
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden; /* Обрізає все зайве по кутах */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+ 
+
+.project-card:hover {
+    transform: translateY(-5px); /* Підняття картки */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* Рядок 441 приблизно */
+.card-image {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Подвійний захист від вилізання */
+}
+.image-placeholder {
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Ховаємо напис [ зображення ], коли наводимо на картку */
+.project-card:hover .image-placeholder {
+    opacity: 0;           /* Робимо повністю невидимим */
+    transition: opacity 0.3s ease; /* Щоб зникало плавно, а не різко */
+}
+
+/* Рядок 453 приблизно */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;   /* Прив'язка до правого краю */
+    bottom: 0;  /* Прив'язка до низу */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    padding: 20px;
+    box-sizing: border-box; /* ЦЕ КЛЮЧОВИЙ РЯДОК: він не дає падінгам розширювати блок */
+    text-align: center;
+    color: white;
+}
+
+/* Поява опису при наведенні */
+.project-card:hover .overlay {
+    opacity: 1; /* Стає видимим */
+}
+
+/* Кнопка "Детальніше" */
+.btn-detail {
+    margin-top: 15px;
+    padding: 8px 20px;
+    background: #ffcc00;
+    color: #1a3c5e;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.bg-blue { background-color: #4A90E2; }   /* Синій */
+.bg-red { background-color: #E24A4A; }    /* Червоний */
+.bg-green { background-color: #4AE27B; }  /* Зелений */
+
+/* Синя картка та її оверлей */
+.bg-blue { background-color: #4A90E2; }
+.project-card:hover .bg-blue .overlay {
+    background-color: rgba(30, 70, 120, 0.9); /* Темно-синій прозорий */
+}
+
+/* Червона картка та її оверлей */
+.bg-red { background-color: #E24A4A; }
+.project-card:hover .bg-red .overlay {
+    background-color: rgba(120, 30, 30, 0.9); /* Темно-червоний прозорий */
+}
+
+/* Зелена картка та її оверлей */
+.bg-green { background-color: #4AE27B; }
+.project-card:hover .bg-green .overlay {
+    background-color: rgba(30, 100, 50, 0.9); /* Темно-зелений прозорий */
+}
+
+.project-descr {
+    font-size: 13px;      /* Маленький шрифт */
+    color: #7f8c8d;      /* Сірий колір */
+    margin: 5px 0;       /* Невеликі відступи */
+    font-weight: normal; /* Щоб не був жирним */
+}
+
+/* Трохи зменшимо відступ у категорії знизу */
+.category {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* --- Крок 3: Виправлена анімація для твого HTML --- */
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 1. Заголовок (Вітаю!...) */
+.hero-blue h1 {
+    animation: fadeInDown 1s ease-out both;
+}
+
+/* 2. Опис (Створюю сучасні...) */
+.hero-blue p {
+    animation: fadeInDown 1s ease-out 0.3s both;
+}
+
+/* 3. Кнопка (Переглянути портфоліо) */
+.hero-blue .cta-button-gold {
+    animation: fadeInDown 1s ease-out 0.6s both;
+    display: inline-block; /* Щоб анімація руху спрацювала правильно */
+}
+
+
+
+
+/* --- КРОК 4: ЗАВАНТАЖУВАЧ ТА БАНЕР (ФІНАЛЬНИЙ ВАРІАНТ) --- */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes popupShow {
+    0% { opacity: 0; transform: translateY(20px); }
+    15% { opacity: 1; transform: translateY(0); }
+    85% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(20px); }
+}
+
+/* Шукай приблизно на 575 рядку */
+.loader-wrapper {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* ТЕМНИЙ ФОН: Глибокий антрацит з синім відливом */
+    background: radial-gradient(circle, #c9c9c9 0%, #c9c9c9 100%) !important;
+}
+
+/* Шукай приблизно на 595 рядку */
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(255, 215, 0, 0.1); /* Прозора золота основа */
+    border-top-color: #ffd700 !important;      /* Яскраве золото зверху */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+.loader-wrapper p {
+    color: #2E75B6;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+}
+
+.popup-banner {
+    position: fixed !important;
+    bottom: 30px !important;    /* Трохи підняли від краю */
+    left: 0 !important;
+    right: 0 !important;        /* Розтягнули від краю до краю */
+    margin: 0 auto !important;  /* Центруємо сам блок */
+    width: fit-content !important; /* Блок буде за розміром тексту */
+    min-width: 300px !important;   /* Але не менше 300 пікселів */
+    
+    background-color: #2E75B6 !important;
+    color: white !important;
+    padding: 16px 30px !important;
+    border-radius: 50px !important; /* Робимо краї заокругленими, як кнопку */
+    text-align: center !important;  /* Текст точно по центру */
+    
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+    z-index: 1000000 !important;
+    
+    /* Анімація появи */
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Кнопки: плавне збільшення та тінь */
+.cta-button-gold, .btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Додаємо перехід спочатку */
+}
+
+.cta-button-gold:hover, .btn:hover {
+    transform: scale(1.05); /* Збільшення на 5% */
+    box-shadow: 0 4px 15px rgba(46, 117, 182, 0.4);
+    cursor: pointer;
+}
+
+/* Пости блогу: підняття картки */
+.post {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover {
+    transform: translateY(-5px); /* Піднімаємо на 5 пікселів вгору */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Поля форми: зміна кольору при натисканні */
+input, textarea {
+    outline: none; /* Прибираємо стандартну чорну рамку браузера */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #2E75B6;
+    box-shadow: 0 0 0 3px rgba(46, 117, 182, 0.15);
+}
+
+.cta-button-gold, .btn {
+    display: inline-block; /* Щоб анімація scale працювала правильно */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button-gold:hover, .btn:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 4px 15px rgba(46, 117, 182, 0.4) !important;
+    cursor: pointer;
+}
+
+.post {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+input:focus, textarea:focus {
+    border: 2px solid #2E75B6 !important;
+    box-shadow: 0 0 0 3px rgba(46, 117, 182, 0.15) !important;
+    background-color: #fff;
+}
+
+
+
+
+
+
+
+body {
+    background-color: #121212; /* Дуже темний, матовий */
+    background-image: 
+        radial-gradient(circle at 50% 10%, rgba(10, 246, 255, 0.1), transparent), /* Підсвітка зверху */
+        url('https://www.transparenttextures.com/patterns/dark-dot-grid.png'); /* Техно-сітка */
+    color: white;
+}
+
+
+
+
+
+.about-text {
+    background-color: white;
+    background-image: url('https://w7.pngwing.com/pngs/351/365/png-transparent-porcelain-ceramic-background-ceramic-blue-ceramic-galleon-thumbnail.png'); /* Приклад текстури гжель */
+    background-size: cover;
+    color: #1a3c5e; /* Темно-синій текст */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+h1, h2, h3 {
+    color: #b8860b !important; /* Темне золото (DarkGoldenRod) */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Легка тінь, щоб текст не "зливався" з фоном */
+    font-weight: bold;
+}
+
+.skill-tag {
+    border: 2px solid #996515 !important; /* Насичена бронза для рамок */
+    color: #996515 !important;
+    background: rgba(255, 215, 0, 0.05); /* Ледь помітний золотистий відблиск всередині */
+}
+
+
+
+
+
+
+.cta-button {
+    background-color: transparent;
+    border: 2px solid #0af6ff; /* Яскравий ціан */
+    color: #0af6ff;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0af6ff;
+    color: black;
+    box-shadow: 0 0 20px rgba(10, 246, 255, 0.8); /* Ефект свічення */
+}
+
+
+
+
+
+
+
+/* ВИПРАВЛЕННЯ КОЛЬОРУ ТЕКСТУ ДЛЯ ЧИТАБЕЛЬНОСТІ */
+
+/* Темний колір для тексту в блоці "Про мене" та в картках блогу */
+.about-text p, 
+.post p, 
+.about-grid p,
+.container p {
+    color: #2c3e50 !important; /* Глибокий темно-сірий, майже чорний */
+    line-height: 1.6 !important; /* Відстань між рядками, щоб легше читалося */
+}
+
+/* Робимо заголовки в цих блоках ще темнішими та чіткішими */
+.about-text h2, 
+.post h3,
+.about-sidebar h3 {
+    color: #1a252f !important;
+    font-weight: 800 !important;
+}
+
+/* Якщо в блозі є основний текст без класів, цей рядок його теж "пофарбує" */
+main p {
+    color: #2c3e50 !important;
+}
+
+
+
+
+
+
+
+/* 1. Текст у головному блоці (Hero section) — робимо СВІТЛИМ */
+/* Це той текст "Створюю сучасні та зручні веб-сайти..." */
+.hero-blue p {
+    color: #e0e0e0 !important; /* Світло-сірий, майже білий */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Щоб текст не губився на фоні */
+}
+
+/* 2. Заголовки "Навички" та "Хобі" — робимо СВІТЛИМИ */
+.about-sidebar h3 {
+    color: #ffd700 !important; /* Золотий, як на гравіюванні зброї */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 3. Список хобі — робимо СВІТЛИМ */
+.hobby-list li {
+    color: #ffffff !important;
+}
+
+/* 4. Текст у білому блоці "Про мене" — робимо ТЕМНИМ */
+/* Якщо фон білий (як порцеляна), текст має бути темним, інакше його не видно */
+.about-text p {
+    color: #1a1a1a !important; /* Майже чорний */
+    line-height: 1.6;
+}
+
+
+
+
+/* ФІНАЛЬНИЙ ЗОЛОТИЙ СТИЛЬ (DELTA FORCE EDITION) */
+
+/* 1. Робимо головне привітання золотим */
+.hero-blue h1, 
+.hero-blue h1 span {
+    color: #ffd700 !important; /* Яскраве золото */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important; /* Тінь для об'єму */
+    font-weight: 900 !important;
+}
+
+/* 2. Робимо текст "Маркетолог та розробник" таким самим золотим */
+.hero-blue h2 {
+    color: #ffd700 !important;
+    opacity: 0.9; /* Трохи м'якше, ніж основний заголовок */
+}
+
+/* 3. Кнопка "Програми" (або твоя головна кнопка) у золотому стилі */
+.cta-button, .btn-primary, .cta-button-gold {
+    background-color: transparent !important;
+    border: 2px solid #ffd700 !important; /* Золота рамка */
+    color: #ffd700 !important; /* Золотий текст */
+    padding: 12px 30px !important;
+    text-transform: uppercase !important;
+    font-weight: bold !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Ефект при наведенні на золоту кнопку */
+.cta-button:hover, .btn-primary:hover, .cta-button-gold:hover {
+    background-color: #ffd700 !important; /* Кнопка заливається золотом */
+    color: #000000 !important; /* Текст стає чорним для контрасту */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6) !important; /* Золоте сяйво */
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+CSS
+/* СТИЛЬ ЗАГОЛОВКА "ПРО МЕНЕ" */
+.about-section h2, 
+#about h2 {
+    color: #1a3c5e !important; /* Глибокий синій (як розпис на зброї) */
+    font-size: 32px !important;
+    text-align: center;
+    position: relative;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Золота лінія під заголовком */
+.about-section h2::after, 
+#about h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #ffd700; /* Твоє золото */
+    margin: 10px auto 0;
+}
+
+
+
+
+
+
+
+
+
+/* СТИЛЬ ЛОГОТИПУ "CREATIVE PORTFOLIO" */
+.navbar-brand, 
+.logo {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 4px !important; /* Великий відступ між буквами — це стильно */
+    
+
+    
+   /* Ефект градієнту: від срібла до золота */
+    background: linear-gradient(45deg, #ffffff, #ffd700, #ffffff) !important;
+    background-clip: text !important; /* Стандартна версія */
+    -webkit-background-clip: text !important; /* Для Chrome/Safari */
+    -webkit-text-fill-color: transparent !important; /* Робимо текст прозорим */
+    color: #ffd700; /* Запасний колір, якщо градієнт не спрацює */
+    
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.3)) !important;
+    }
+
+
+
+
+
+/* ЛОГОТИП: ВИРІВНЮВАННЯ ПО ВИСОТІ З КНОПКАМИ МЕНЮ */
+.navbar-brand, 
+.logo {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 3px !important; 
+    
+    /* Збільшуємо розмір, щоб візуально дорівнював висоті кнопок */
+    font-size: 38px !important; 
+    line-height: 1 !important; /* Прибираємо зайві відступи зверху/знизу */
+    display: flex !important;
+    align-items: center !important;
+
+    /* Твій фірмовий градієнт */
+    background: linear-gradient(45deg, #ffffff, #ffd700, #ffffff) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: #ffd700 !important;
+
+    /* М'яка золота тінь */
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4)) !important;
+    
+    /* Щоб лого не "стрибало" при зміні розміру вікна */
+    white-space: nowrap !important;
+}
+
+
+
+/* ВІДСТУПИ ДЛЯ ГОЛОВНОГО БЛОКУ */
+.hero-white, .about-container, .container {
+    margin-left: 20px !important;  /* Відступ зліва */
+    margin-right: 20px !important; /* Відступ справа */
+    width: auto !important;        /* Дозволяємо блоку звузитися */
+    border-radius: 15px !important; /* Заокруглюємо кути, щоб не було гостро */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important; /* Додаємо легку тінь */
+}
+
+/* Якщо це мобільна версія або вузький екран */
+@media (max-width: 768px) {
+    .hero-white, .container {
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+    }
+}
+
+/* --- ЄДИНИЙ ТА ПРАВИЛЬНИЙ СТИЛЬ МЕНЮ --- */
+
+/* --- ВИПРАВЛЕНЕ МЕНЮ (БЕЗ СІПАННЯ) --- */
+
+nav a, .nav-link, .navbar-nav a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    padding: 10px 20px !important;
+    font-weight: bold !important;
+    border-radius: 25px !important;
+    background-color: transparent !important;
+    display: inline-block !important;
+    
+    /* КЛЮЧ ДО ПЛАВНОСТІ: */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease !important;
+    transform: scale(1) !important; /* Базовий розмір */
+    backface-visibility: hidden;    /* Прибирає мікро-сіпання тексту */
+}
+
+/* Ефект при наведенні */
+nav a:hover, .nav-link:hover, .navbar-nav a:hover {
+    background-color: #ffd700 !important;
+    color: #000000 !important;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4) !important;
+    
+    /* Плавне збільшення */
+    transform: scale(1.08) !important; 
+}
+
+/* Стан активної сторінки */
+.active, .nav-link.active {
+    background-color: transparent !important;
+    color: #ffffff !important;
+}
+
+
+
+
+
+
+/* --- ФІНАЛЬНЕ ВИПРАВЛЕННЯ МЕНЮ: ОДНАКОВІ КОЛЬОРИ --- */
+
+nav a, .nav-link, .navbar-nav a {
+    /* Робимо колір тексту точно золотим, як рамка (не білим!) */
+    color: #ffd700 !important; 
+    text-decoration: none !important;
+    padding: 8px 20px !important;
+    font-weight: bold !important;
+    border-radius: 25px !important;
+    
+    background-color: transparent !important;
+    /* Робимо рамку чіткою, кольору "Золото" */
+    border: 2px solid #ffd700 !important; 
+    
+    margin: 0 5px !important;
+    display: inline-block !important;
+    
+    transition: all 0.3s ease-in-out !important;
+    transform: scale(1) !important;
+}
+
+/* Ефект при наведенні — тепер колір буде однаково насиченим для всіх */
+nav a:hover, .nav-link:hover, .navbar-nav a:hover {
+    background-color: #ffd700 !important; /* Насичене золото */
+    color: #000000 !important;           /* Чіткий чорний текст */
+    
+    /* Сяйво саме золотого кольору */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.7) !important;
+    transform: scale(1.1) !important; 
+}
+
+/* ПРИБИРАЄМО БІЛИЙ НАЛІТ (ШУМ) ВСЕРЕДИНІ АКТИВНОЇ КНОПКИ */
+
+.active, 
+.nav-link.active, 
+.navbar-nav .nav-link.active,
+[aria-current="page"] {
+    /* Примусово робимо фон ТАКИМ САМИМ прозорим, як у сусідніх кнопок */
+    background-color: transparent !important; 
+    background: none !important; 
+    
+    /* Прибираємо будь-яку внутрішню тінь, яка може давати ефект "димки" */
+    box-shadow: none !important;
+    
+    /* Залишаємо тільки золотий текст і рамку */
+    color: #ffd700 !important;
+    border: 2px solid #ffd700 !important;
+}
+
+/* Додатковий захист: щоб при наведенні на "шумну" кнопку вона ставала нормальною */
+nav a.active:hover, 
+.nav-link.active:hover {
+    background-color: #ffd700 !important; /* Чисте золото без домішок */
+    color: #000000 !important;
+}
+
+/* Вимикаємо будь-які стандартні підсвічування браузера */
+nav a:focus, .nav-link:focus {
+    color: #000000 !important;
+    background-color: #ffd700 !important;
+}
+
+
+/* --- ВСТАВЛЯТИ ТУТ --- */
+nav a {
+    display: inline-block;
+    transition: all 0.4s ease-in-out; /* Цей рядок робить появу плавною */
+    position: relative;
+}
+
+nav a:hover {
+    transform: translateY(-2px); /* Легке підняття при наведенні, як у інших */
+}
+
+/* Стиль для активної сторінки, щоб вона не "била" по очах */
+nav a.active {
+    transition: none; /* Щоб при завантаженні вона вже була на місці */
+}
+/* --- КІНЕЦЬ ВСТАВКИ --- */
+
+
+/* ВСТАВИТИ В КІНЕЦЬ ФАЙЛУ style.css */
+
+.hero-blue h1, 
+.hero-blue p {
+    color: #ffffff !important; /* Робимо текст білим */
+}
+
+/* Якщо на сторінці портфоліо інший клас, про всяк випадок додамо і цей: */
+section h1, 
+section p {
+    color: #ffffff;
+}
+
+/* Золотистий акцент не чіпаємо, щоб він виділявся */
+.accent-gold {
+    color: #FFD700 !important; 
+}
+
+
+
+/* ============================================================
+   ФІНАЛЬНЕ ВИПРАВЛЕННЯ КОЛЬОРУ ТЕКСТУ ДЛЯ ПОРТФОЛІО
+   ============================================================ */
+
+/* Робимо білим текст саме в синьому блоці портфоліо */
+.hero-blue p, 
+.hero-blue .about-text p {
+    color: #ffffff !important; 
+    opacity: 1 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Додаємо чіткості */
+}
+
+/* Якщо текст "Тут зібрані проекти..." знаходиться у звичайній секції */
+section p, 
+main section p {
+    color: #ffffff !important;
+}
+
+/* При цьому назви проектів у картках (які на білому фоні) не чіпаємо, 
+   або робимо їх темно-синіми для контрасту, якщо вони раптом теж стали білими */
+.project-card h3, 
+.project-card p {
+    color: #1a3c5e !important; 
+}
+
+/* Золотий акцент у заголовку залишаємо яскравим */
+.accent-gold {
+    color: #ffd700 !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
