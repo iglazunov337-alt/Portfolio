@@ -148,3 +148,20 @@ if (skillsList) {
     }
     skillsList.innerHTML = html;
 }
+
+
+
+
+
+
+
+
+
+
+
+window.onload = function() {
+    var loader = document.getElementById('loader');
+    if (loader) {
+        loader.style.display = 'none';
+    }
+};
