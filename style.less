@@ -2428,3 +2428,66 @@ body.dark-theme {
         color: rgba(255, 255, 255, 0.8) !important;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* СТИЛІ ДЛЯ КНОПКИ НАГОРУ */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    width: 50px;
+    height: 50px;
+    background-color: #2E75B6; 
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: #ffcc00; /* Желтый при наведении */
+        transform: translateY(-5px);
+    }
+}
+
+.scroll-top-btn:hover {
+    background-color: #ffcc00; /* Жовтий при наведенні */
+    color: #333;
+    transform: scale(1.1);
+}
+
+/* СТИЛІ ДЛЯ ТЕМНОЇ ТЕМИ */
+body.dark-theme {
+    background-color: #0b1120 !important;
+    color: #ffffff !important;
+}
+
+body.dark-theme .about-card-custom, 
+body.dark-theme .card {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.2);
+}
