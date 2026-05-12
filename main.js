@@ -2,10 +2,12 @@
 // ЛАБОРАТОРНА РОБОТА №5 — ІЛЛЯ ГЛАЗУНОВ
 // ==========================================
 
+// 1. ПРИХОВУВАННЯ ЗАВАНТАЖУВАЧА ТА ПЕРЕВІРКА ТЕМИ
 window.addEventListener('load', function() {
-    const loader = document.getElementById('loader');
+    // Приховуємо лоадер
+    let loader = document.getElementById('loader');
     if (loader) {
-        setTimeout(() => {
+        setTimeout(function() {
             loader.style.opacity = '0';
             setTimeout(() => { loader.style.display = 'none'; }, 500);
         }, 1000);
@@ -146,14 +148,6 @@ if (skillsList) {
     }
     skillsList.innerHTML = html;
 }
-
-
-
-
-
-
-
-
 
 
 
