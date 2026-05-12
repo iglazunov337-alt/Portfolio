@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Блог | Ілля ГЛАЗУНОВ</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Твій Less -->
     <link rel="stylesheet/less" type="text/css" href="css/style.less">
     <script src="https://cdn.jsdelivr.net/npm/less"></script>
     
@@ -69,6 +67,7 @@
             display: flex; 
             flex-direction: column;
             margin: 0;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .section-title {
@@ -103,11 +102,20 @@
             text-align: center;
             border: none !important;
         }
+
+        /* Стилі для ЛР №5 */
+        .loader-wrapper { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: white; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 999999; transition: opacity 0.5s; }
+        .loader { width: 60px; height: 60px; border: 6px solid #f3f3f3; border-top: 6px solid #2E75B6; border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
 
-    <!-- ОНОВЛЕНА ВЕРХУШКА -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader"></div>
+        <p class="mt-3 fw-bold text-primary">ЗАВАНТАЖЕННЯ...</p>
+    </div>
+
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand fw-bold text-uppercase" href="index.html">CreativePortfolio</a>
@@ -120,6 +128,9 @@
                     <li class="nav-item"><a class="custom-btn-style" href="portfolio.html">Портфоліо</a></li>
                     <li class="nav-item"><a class="custom-btn-style active" href="blog.html">Блог</a></li>
                     <li class="nav-item"><a class="custom-btn-style" href="contact.html">Контакти</a></li>
+                    <li class="nav-item d-flex align-items-center ms-lg-3">
+                        <button id="themeToggle" class="btn btn-dark btn-sm">⚪ Темна тема</button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -127,11 +138,9 @@
 
     <div class="container py-5">
         <div class="row">
-            <!-- КОЛОНКА З ПОСТАМИ -->
             <div class="col-md-8">
                 <h2 class="section-title">ОСТАННІ ЗАПИСИ</h2>
                 
-                <!-- Пост 1 -->
                 <div class="card blog-card text-dark p-3">
                     <div class="card-body">
                         <h4 class="fw-bold">Як я вивчив CSS за 30 днів</h4>
@@ -141,7 +150,6 @@
                     </div>
                 </div>
 
-                <!-- Пост 2 -->
                 <div class="card blog-card text-dark p-3">
                     <div class="card-body">
                         <h4 class="fw-bold">Маркетингові стратегії 2026</h4>
@@ -151,7 +159,6 @@
                     </div>
                 </div>
 
-                <!-- Пост 3 -->
                 <div class="card blog-card text-dark p-3">
                     <div class="card-body">
                         <h4 class="fw-bold">Регіональна економіка та її розвиток</h4>
@@ -161,7 +168,6 @@
                     </div>
                 </div>
 
-                <!-- Пост 4 -->
                 <div class="card blog-card text-dark p-3">
                     <div class="card-body">
                         <h4 class="fw-bold">Основи ділових комунікацій</h4>
@@ -171,7 +177,6 @@
                     </div>
                 </div>
 
-                <!-- Пост 5 -->
                 <div class="card blog-card text-dark p-3">
                     <div class="card-body">
                         <h4 class="fw-bold">UI/UX дизайн: майбутнє інтерфейсів</h4>
@@ -182,7 +187,6 @@
                 </div>
             </div>
 
-            <!-- САЙДБАР -->
             <div class="col-md-4">
                 <div class="card sidebar-card text-dark">
                     <div class="card-header">КАТЕГОРІЇ</div>
@@ -216,6 +220,9 @@
         </div>
     </footer>
 
+    <button id="scrollTopBtn" class="scroll-top-btn" title="Прокрутити нагору" style="position: fixed; bottom: 30px; right: 30px; display: none; width: 50px; height: 50px; background-color: #ffcc00; border: none; border-radius: 50%; color: #333; font-weight: bold; z-index: 1000;"> ↑ </button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
