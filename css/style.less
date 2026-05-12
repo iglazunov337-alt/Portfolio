@@ -2486,8 +2486,26 @@ body.dark-theme {
 }
 
 body.dark-theme .about-card-custom, 
-body.dark-theme .card {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    color: white !important;
-    border-color: rgba(255, 255, 255, 0.2);
+// Виправлення видимості тексту в картках послуг для темної теми
+body.dark-theme {
+    .service-card {
+        h4 {
+            color: #2E75B6 !important; // Темно-синій заголовок
+        }
+        p {
+            color: #333333 !important; // Темно-сірий текст
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
