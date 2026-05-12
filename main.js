@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         themeBtn.onclick = function() {
             document.body.classList.toggle('dark-theme');
             const заставки = document.body.classList.contains('dark-theme');
-            themeBtn.innerHTML = заставки ? "☀️ Світла тема" : "🌙 Темна тема";
+            themeBtn.innerHTML = заставки ? "🔆 Світла тема" : "⚪ Темна тема";
             themeBtn.className = заставки ? "btn btn-light btn-sm" : "btn btn-dark btn-sm";
         };
     }
