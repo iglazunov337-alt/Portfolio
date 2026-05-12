@@ -148,6 +148,3 @@ if (skillsList) {
     }
     skillsList.innerHTML = html;
 }
-
-
-
