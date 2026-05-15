@@ -94,6 +94,7 @@
         .card-img-wrapper { 
             position: relative; 
             aspect-ratio: 4 / 3; 
+            background-color: #eee; /* Заглушка, поки вантажаться фото */
         }
 
         .overlay {
@@ -128,6 +129,90 @@
         .loader-wrapper { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: white; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 999999; transition: opacity 0.5s; }
         .loader { width: 60px; height: 60px; border: 6px solid #f3f3f3; border-top: 6px solid #2E75B6; border-radius: 50%; animation: spin 1s linear infinite; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* Стилі для Lightbox (ЛР №6) */
+        
+/* --- СТИЛІ ДЛЯ LIGHTBOX (ЯК У ПРИКЛАДІ) --- */
+.lightbox-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85); 
+    display: flex; justify-content: center; align-items: center; 
+    z-index: 2000; padding: 20px;
+}
+
+.lightbox-content {
+    background: white;
+    width: 100%;
+    max-width: 650px; /* Обмежуємо ширину вікна */
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.lightbox-content img {
+    width: 100%;
+    height: 350px; /* Фіксована висота для картинки */
+    object-fit: cover; /* Картинка заповнює область без спотворень */
+    display: block;
+}
+
+.lightbox-info {
+    padding: 25px;
+    color: #333;
+    text-align: left;
+}
+
+.lightbox-info h4 {
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.lightbox-info p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.lightbox-close {
+    position: absolute; top: 15px; right: 20px;
+    font-size: 30px; color: white; cursor: pointer;
+    z-index: 2100; text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.lightbox-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;
+}
+
+
+/* --- СТИЛЬ КНОПОК ФІЛЬТРАЦІЇ --- */
+        .filter-btn {
+            background: transparent;
+            color: #ffcc00; /* Жовтий, як у твого бренду */
+            border: 2px solid #ffcc00;
+            padding: 8px 25px;
+            margin: 5px;
+            border-radius: 50px; /* Круглі, як у меню */
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .filter-btn:hover {
+            background: rgba(255, 204, 0, 0.2);
+            color: #fff;
+            border-color: #fff;
+        }
+
+        .filter-btn.active {
+            background-color: #ffcc00 !important;
+            color: #333 !important;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+        }
+
+
     </style>
 </head>
 <body>
@@ -160,82 +245,29 @@
     <main class="container py-5">
         <h1 class="text-center section-title">Мої роботи</h1>
         <p class="text-center text-white mb-5 fs-5">Проекти, створені з увагою до деталей та маркетинговим підходом</p>
-        
-        <div class="row g-4">
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="card project-card">
-                    <div class="card-img-wrapper" style="background-color: #6f42c1;">
-                        <div class="overlay">
-                            <p>Розробка сучасного інтернет-магазину з адаптивним дизайном.</p>
-                            <button class="btn btn-warning btn-sm fw-bold px-3">Детальніше</button>
-                        </div>
-                    </div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Інтернет-магазин</h5>
-                        <span class="badge bg-primary">Веб-дизайн</span>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="card project-card">
-                    <div class="card-img-wrapper" style="background-color: #2b3d63;">
-                        <div class="overlay">
-                            <p>Маркетинговий аналіз ринку та стратегія просування.</p>
-                            <button class="btn btn-warning btn-sm fw-bold px-3">Детальніше</button>
-                        </div>
-                    </div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Маркетинг-кампанія</h5>
-                        <span class="badge bg-warning text-dark">Маркетинг</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="card project-card">
-                    <div class="card-img-wrapper" style="background-color: #4fc3f7;">
-                        <div class="overlay">
-                            <p>Створення цільової сторінки для технологічного стартапу.</p>
-                            <button class="btn btn-warning btn-sm fw-bold px-3">Детальніше</button>
-                        </div>
-                    </div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Лендинг-сторінка</h5>
-                        <span class="badge bg-info text-dark">UI/UX</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="card project-card">
-                    <div class="card-img-wrapper" style="background-color: #39e6a0;">
-                        <div class="overlay">
-                            <p>Розробка панелі моніторингу бізнес-показників.</p>
-                            <button class="btn btn-warning btn-sm fw-bold px-3">Детальніше</button>
-                        </div>
-                    </div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Дашборд</h5>
-                        <span class="badge bg-success">Аналітика</span>
-                    </div>
-                </div>
-            </div>
+        <div class="text-center mb-4" id="filterButtons">
+            <button class="filter-btn active" data-category="all">Всі</button>
+            <button class="filter-btn" data-category="web">Веб-дизайн</button>
+            <button class="filter-btn" data-category="mobile">Мобільні</button>
+            <button class="filter-btn" data-category="ui">UI/UX</button>
         </div>
+
+        <div class="row g-4" id="gallery">
+            </div>
     </main>
 
     <footer class="py-4 text-center text-white mt-auto" style="background-color: #0b1120; border-top: 1px solid rgba(255,255,255,0.1);">
         <div class="container">
-            <p class="mb-0">© 2026 Ілля ГЛАЗУНОВ | КНУ, група М-25</p>
+            <p class="mb-0">© 2026 ІЛЛЯ ГЛАЗУНОВ | КНУ, ГРУПА М-25</p>
         </div>
     </footer>
 
-    <button id="scrollTopBtn" class="scroll-top-btn" title="Прокрутити нагору" style="position: fixed; bottom: 30px; right: 30px; display: none; width: 50px; height: 50px; background-color: #ffcc00; border: none; border-radius: 50%; color: #333; font-weight: bold; z-index: 1000;"> ↑ </button>
+    <button id="scrollTopBtn" style="position: fixed; bottom: 30px; right: 30px; display: none; width: 50px; height: 50px; background-color: #ffcc00; border: none; border-radius: 50%; color: #333; font-weight: bold; z-index: 1000;"> ↑ </button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-     <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+
 </body>
 </html>
-
-
-

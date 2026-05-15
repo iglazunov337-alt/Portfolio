@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
@@ -59,7 +59,7 @@
             .navbar-brand { font-size: 2.2rem !important; margin-bottom: 10px !important; }
         }
 
-        /* --- ТВОЇ ОРИГІНАЛЬНІ СТИЛІ БЛОГУ (БЕЗ ЗМІН) --- */
+        /* --- ТВОЇ ОРИГІНАЛЬНІ СТИЛІ БЛОГУ --- */
         body { 
             background-color: #2b5d8c; 
             color: white; 
@@ -103,10 +103,14 @@
             border: none !important;
         }
 
-        /* Стилі для ЛР №5 */
         .loader-wrapper { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: white; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 999999; transition: opacity 0.5s; }
         .loader { width: 60px; height: 60px; border: 6px solid #f3f3f3; border-top: 6px solid #2E75B6; border-radius: 50%; animation: spin 1s linear infinite; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* --- ФІКС: КОЛІР ТЕКСТУ ПРИ РОЗГОРТАННІ СТАТТІ (ДЛЯ ТЕМНОЇ ТЕМИ) --- */
+        [id^="fullText"] {
+            color: #212529 !important; /* Робимо текст завжди темним */
+        }
     </style>
 </head>
 <body>
@@ -140,54 +144,18 @@
         <div class="row">
             <div class="col-md-8">
                 <h2 class="section-title">ОСТАННІ ЗАПИСИ</h2>
-                
-                <div class="card blog-card text-dark p-3">
-                    <div class="card-body">
-                        <h4 class="fw-bold">Як я вивчив CSS за 30 днів</h4>
-                        <p class="text-muted small">15 квітня 2026</p>
-                        <p>Мій шлях у веб-розробку розпочався з простого бажання зрозуміти, як працюють стилі. За цей місяць я пройшов шлях від звичайних селекторів до складних сіток та анімацій.</p>
-                        <a href="#" class="btn btn-primary rounded-pill px-4">Читати далі</a>
+                <div id="blogPosts">
                     </div>
-                </div>
-
-                <div class="card blog-card text-dark p-3">
-                    <div class="card-body">
-                        <h4 class="fw-bold">Маркетингові стратегії 2026</h4>
-                        <p class="text-muted small">20 квітня 2026</p>
-                        <p>Аналіз сучасного ринку показує, що персоналізація контенту стає ключовим фактором успіху. Розглядаємо кейси провідних брендів та їх підходи до аудиторії.</p>
-                        <a href="#" class="btn btn-primary rounded-pill px-4">Читати далі</a>
-                    </div>
-                </div>
-
-                <div class="card blog-card text-dark p-3">
-                    <div class="card-body">
-                        <h4 class="fw-bold">Регіональна економіка та її розвиток</h4>
-                        <p class="text-muted small">25 квітня 2026</p>
-                        <p>Дослідження факторів економічного росту в нашому регіоні. Як територіальна організація виробництва впливає на добробут населення.</p>
-                        <a href="#" class="btn btn-primary rounded-pill px-4">Читати далі</a>
-                    </div>
-                </div>
-
-                <div class="card blog-card text-dark p-3">
-                    <div class="card-body">
-                        <h4 class="fw-bold">Основи ділових комунікацій</h4>
-                        <p class="text-muted small">1 травня 2026</p>
-                        <p>Правильне ведення документації та етика професійного спілкування — це фундамент кар'єри будь-якого спеціаліста. Розбираємо стандарти ДСТУ.</p>
-                        <a href="#" class="btn btn-primary rounded-pill px-4">Читати далі</a>
-                    </div>
-                </div>
-
-                <div class="card blog-card text-dark p-3">
-                    <div class="card-body">
-                        <h4 class="fw-bold">UI/UX дизайн: майбутнє інтерфейсів</h4>
-                        <p class="text-muted small">5 травня 2026</p>
-                        <p>Чому мінімалізм залишається в тренді та як створювати інтерфейси, які будуть інтуїтивно зрозумілими для кожного користувача.</p>
-                        <a href="#" class="btn btn-primary rounded-pill px-4">Читати далі</a>
-                    </div>
-                </div>
             </div>
 
             <div class="col-md-4">
+                <div class="card sidebar-card text-dark">
+                    <div class="card-header">ПОШУК</div>
+                    <div class="card-body">
+                        <input type="text" class="form-control" id="blogSearch" placeholder="Пошук по статтях...">
+                    </div>
+                </div>
+
                 <div class="card sidebar-card text-dark">
                     <div class="card-header">КАТЕГОРІЇ</div>
                     <ul class="list-group list-group-flush">
@@ -216,16 +184,15 @@
 
     <footer class="py-4 text-center text-white mt-auto" style="background-color: #0b1120; border-top: 1px solid rgba(255,255,255,0.1);">
         <div class="container">
-            <p class="mb-0">© 2026 Ілля ГЛАЗУНОВ | КНУ, група М-25</p>
+            <p class="mb-0">© 2026 ІЛЛЯ ГЛАЗУНОВ | КНУ, ГРУПА М-25</p>
         </div>
     </footer>
 
-    <button id="scrollTopBtn" class="scroll-top-btn" title="Прокрутити нагору" style="position: fixed; bottom: 30px; right: 30px; display: none; width: 50px; height: 50px; background-color: #ffcc00; border: none; border-radius: 50%; color: #333; font-weight: bold; z-index: 1000;"> ↑ </button>
+    <button id="scrollTopBtn" style="position: fixed; bottom: 30px; right: 30px; display: none; width: 50px; height: 50px; background-color: #ffcc00; border: none; border-radius: 50%; color: #333; font-weight: bold; z-index: 1000;"> ↑ </button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-     <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
 
 </body>
 </html>
-
-
