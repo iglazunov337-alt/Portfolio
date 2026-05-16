@@ -2518,23 +2518,21 @@ body.dark-theme {
 
 
 
-/* ==========================================================================
-   1. СТИЛИ ДЛЯ РАЗНОЦВЕТНЫХ ПРОГРЕСС-БАРОВ (НАВЫКОВ)
-   ========================================================================== */
+/* Стили для прогресс-баров в style.less */
 .progress-bar {
-    width: 0%; /* Изначально полосы пустые, их плавно заполнит JS */
+    width: 0%; 
     height: 100%;
     color: #fff;
     text-align: center;
     font-size: 0.85rem;
     line-height: 20px;
-    transition: none !important; /* Отключаем CSS-анимацию, так как JS считает сам */
+    transition: none !important; 
 
-    /* Вложенные классы для индивидуальных цветов каждой полосы */
-    &.bg-html { background-color: #ff4d4d !important; }       /* Красный */
-    &.bg-marketing { background-color: #ff9f43 !important; }  /* Оранжевый */
-    &.bg-js { background-color: #2ed573 !important; }         /* Зеленый */
-    &.bg-analytics { background-color: #1e90ff !important; }  /* Синий */
+    /* Жесткая привязка к тегу и классам для максимального приоритета */
+    &&.bg-html { background-color: #ff4d4d !important; }
+    &&.bg-marketing { background-color: #ff9f43 !important; }
+    &&.bg-js { background-color: #2ed573 !important; }
+    &&.bg-analytics { background-color: #1e90ff !important; }
 }
 
 
