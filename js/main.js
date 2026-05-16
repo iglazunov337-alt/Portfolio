@@ -1,50 +1,23 @@
 // ==========================================
-// ЛАБОРАТОРНА РОБОТА №5 — ІЛЛЯ ГЛАЗУНОВ
+// ЛАБОРАТОРНА РОБОТА — ІЛЛЯ ГЛАЗУНОВ
+// ГЛОБАЛЬНІ СКРИПТИ ДЛЯ ВСІХ СТОРІНОК
 // ==========================================
 
-// 1. ПРИХОВУВАННЯ ЗАВАНТАЖУВАЧА ТА ПЕРЕВІРКА ТЕМИ
-window.addEventListener('load', function() {
-    // Приховуємо лоадер
+// 1. УНІВЕРСАЛЬНЕ ПРИХОВУВАННЯ ЗАВАНТАЖУВАЧА (Loader) ДЛЯ ВСІХ СТОРІНОК
+document.addEventListener('DOMContentLoaded', function() {
     let loader = document.getElementById('loader');
     if (loader) {
-        setTimeout(function() {
+        // Плавно ховаємо лоадер через 300 мілісекунд після завантаження сторінки
+        setTimeout(() => {
             loader.style.opacity = '0';
-            setTimeout(() => { loader.style.display = 'none'; }, 500);
-        }, 1000);
-    }
-
-    // ПЕРЕВІРКА ТЕМИ ПРИ ЗАВАНТАЖЕННІ (Щоб не злітала на інших сторінках)
-    const savedTheme = localStorage.getItem('theme');
-    const themeToggle = document.getElementById('themeToggle');
-    
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-theme');
-        if (themeToggle) {
-            themeToggle.innerHTML = '🔆 Світла тема';
-            themeToggle.className = 'btn btn-light btn-sm ms-lg-3';
-        }
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500); // Час на CSS-перехід зникнення
+        }, 300);
     }
 });
 
-// 4. ПЕРЕМИКАЧ ТЕМИ (ЗБЕРЕЖЕННЯ В LOCALSTORAGE)
-const themeToggle = document.getElementById('themeToggle');
-if (themeToggle) {
-    themeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('dark-theme');
-        
-        if (document.body.classList.contains('dark-theme')) {
-            themeToggle.innerHTML = '🔆 Світла тема';
-            themeToggle.className = 'btn btn-light btn-sm ms-lg-3';
-            localStorage.setItem('theme', 'dark'); // Запам'ятовуємо, що тема темна
-        } else {
-            themeToggle.innerHTML = '⚪ Темна тема';
-            themeToggle.className = 'btn btn-dark btn-sm ms-lg-3';
-            localStorage.setItem('theme', 'light'); // Запам'ятовуємо, що тема світла
-        }
-    });
-}
-
-// 2. ВАЛІДАЦІЯ ФОРМИ ТА ЛІЧИЛЬНИК (КРОК 2, 7)
+// 2. ВАЛІДАЦІЯ ФОРМИ ТА ЛІЧИЛЬНИК СИМВОЛІВ
 function validateForm() {
     clearErrors();
     let isValid = true;
@@ -77,9 +50,15 @@ function validateForm() {
     }
 
     if (isValid) {
-        document.getElementById('successMessage').style.display = 'block';
-        document.getElementById('contactForm').reset();
-        document.getElementById('charCount').textContent = '0 символів';
+        const successMsg = document.getElementById('successMessage');
+        if (successMsg) successMsg.style.display = 'block';
+        
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) contactForm.reset();
+        
+        const charCount = document.getElementById('charCount');
+        if (charCount) charCount.textContent = '0 symbols';
+        
         alert('Дякуємо! ГЛАЗУНОВ отримав ваше повідомлення.');
     }
     return false; 
@@ -98,17 +77,22 @@ function clearErrors() {
     errors.forEach(err => err.textContent = '');
 }
 
+// Функція підрахунку символів (для форми контактів)
 function countCharacters() {
-    let message = document.getElementById('message').value;
+    let messageElem = document.getElementById('message');
+    if (!messageElem) return;
+
+    let message = messageElem.value;
     let count = message.length;
     let charCountElem = document.getElementById('charCount');
+    
     if (charCountElem) {
         charCountElem.textContent = count + ' символів';
         charCountElem.style.color = (count < 10 && count > 0) ? 'red' : '#6c757d';
     }
 }
 
-// 3. КНОПКА "НАГОРУ" (КРОК 3)
+// 3. КНОПКА "НАГОРУ" (Працює на всіх сторінках при скролі)
 window.onscroll = function() {
     let scrollTopBtn = document.getElementById('scrollTopBtn');
     if (scrollTopBtn) {
@@ -122,46 +106,3 @@ document.addEventListener('click', function(e) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 });
-
-// 5. ДИНАМІЧНІ НАВИЧКИ (КРОК 5)
-let skills = [
-    { name: 'HTML5 / CSS3 / LESS', level: 90, color: 'bg-primary' },
-    { name: 'Маркетинговий аналіз', level: 85, color: 'bg-success' },
-    { name: 'JavaScript', level: 75, color: 'bg-warning' },
-    { name: 'Bootstrap 5', level: 95, color: 'bg-info' }
-];
-
-let skillsList = document.getElementById('skillsList');
-if (skillsList) {
-    let html = '';
-    for (let i = 0; i < skills.length; i++) {
-        html += `
-            <div class="mb-3">
-                <label class="fw-bold d-block mb-1 text-white">${skills[i].name}</label>
-                <div class="progress" style="height: 25px; background: rgba(255,255,255,0.1);">
-                    <div class="progress-bar ${skills[i].color}" role="progressbar" 
-                         style="width: ${skills[i].level}%">
-                        ${skills[i].level}%
-                    </div>
-                </div>
-            </div>`;
-    }
-    skillsList.innerHTML = html;
-}
-
-
-
-
-
-
-
-
-
-
-
-window.onload = function() {
-    var loader = document.getElementById('loader');
-    if (loader) {
-        loader.style.display = 'none';
-    }
-};
