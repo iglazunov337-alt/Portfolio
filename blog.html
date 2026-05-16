@@ -111,6 +111,66 @@
         [id^="fullText"] {
             color: #212529 !important; /* Робимо текст завжди темним */
         }
+
+
+
+
+
+
+
+
+
+/* --- СТИЛИ ДЛЯ КНОПКИ ПЕРЕКЛЮЧЕНИЯ ТЕМЫ --- */
+
+/* 1. Кнопка по умолчанию (когда тема СВЕТЛАЯ) */
+#themeToggle {
+    background-color: #f1f3f5 !important;       /* Светлый фон */
+    color: #1a2229 !important;                  /* Черный текст */
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 6px !important;
+    padding: 6px 14px !important;
+    font-weight: 500 !important;
+    font-size: 0.9rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    transition: all 0.2s !important;
+}
+
+#themeToggle:hover {
+    background-color: #e2e6ea !important;       /* Чуть темнее при наведении в светлой теме */
+}
+
+/* Автоматическая подстановка иконки солнышка для светлой темы */
+#themeToggle::before {
+    content: "☀️" !important;
+}
+
+
+/* 2. Кнопка, когда активирована ТЕМНАЯ ТЕМА (внутри body.dark-theme) */
+body.dark-theme #themeToggle {
+    background-color: #1a2229 !important;       /* Темный фон */
+    color: white !important;                    /* Белый текст */
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+body.dark-theme #themeToggle:hover {
+    background-color: #25313c !important;       /* Светлее при наведении в темной теме */
+}
+
+/* Автоматическая подмена иконки на луну в темной теме */
+body.dark-theme #themeToggle::before {
+    content: "🌑" !important;
+}
+
+
+
+
+
+
+
+
+
     </style>
 </head>
 <body>
@@ -133,7 +193,7 @@
                     <li class="nav-item"><a class="custom-btn-style active" href="blog.html">Блог</a></li>
                     <li class="nav-item"><a class="custom-btn-style" href="contact.html">Контакти</a></li>
                     <li class="nav-item d-flex align-items-center ms-lg-3">
-                        <button id="themeToggle" class="btn btn-dark btn-sm">⚪ Темна тема</button>
+                        <button id="themeToggle" class="btn btn-dark btn-sm">🌑 Темна тема</button>
                     </li>
                 </ul>
             </div>
@@ -191,8 +251,15 @@
     <button id="scrollTopBtn" style="position: fixed; bottom: 30px; right: 30px; display: none; width: 50px; height: 50px; background-color: #ffcc00; border: none; border-radius: 50%; color: #333; font-weight: bold; z-index: 1000;"> ↑ </button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+   
     <script src="js/blog.js"></script>
+     <script src="js/main.js"></script>
+    <script src="js/storage.js"></script>
+
+<script src="js/scroll-reveal.js"></script>
+<script src="js/smooth-scroll.js"></script>
+<script src="js/typing.js"></script>
+
 
 </body>
 </html>

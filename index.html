@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -76,7 +78,206 @@
         }
 
         .error-message { font-size: 14px; margin-top: 5px; min-height: 20px; }
+
+        /* ========================================================
+           ВИМОГИ ЛАБОРАТОРНОЇ №7 (КРОК 1, КРОК 2, КРОК 5)
+           ======================================================== */
+
+        /* Крок 1. Scroll Reveal — стани */
+        .hidden {
+            opacity: 0 !important;
+            transform: translateY(30px) !important;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out !important;
+        }
+        .visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        /* Примусове скидання Бутстрап-анімацій, щоб лініями керував лише JavaScript */
+        .skills-section .progress-bar, #skills .progress-bar {
+            width: 0%;
+            transition: none !important;
+        }
+
+        /* Крок 2. Темна тема */
+        body.dark-theme {
+            background-color: #1a1a2e !important;
+            color: #e0e0e0 !important;
+        }
+        body.dark-theme .navbar {
+            background-color: #212529 !important;
+        }
+        body.dark-theme .card, body.dark-theme .service-card {
+            background-color: #212529 !important;
+            color: #e0e0e0 !important;
+            border-color: #2c2c54 !important;
+        }
+        body.dark-theme .service-card h4 {
+            color: #ffcc00 !important;
+        }
+        body.dark-theme .service-card p {
+            color: #ccc !important;
+        }
+        body.dark-theme footer {
+            background-color: #0f0f1a !important;
+        }
+
+        /* Крок 5. Typing cursor — мигаючий курсор */
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: #ffc107;
+            margin-left: 2px;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Стиль для спливаючого тосту візитів */
+        .welcome-toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2E75B6;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 100000;
+            font-family: sans-serif;
+            border-left: 5px solid #ffcc00;
+        }
+
+
+
+
+
+/* --- СТИЛІ ДЛЯ ВИПАДАЮЧОГО МЕНЮ В СТОВПЧИК ПРИ НАВЕДЕННІ --- */
+        .dropdown-hover {
+            position: relative;
+        }
+
+        /* Ховаємо меню за замовчуванням і робимо його в стовпчик */
+        .dropdown-column-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #2E75B6;
+            min-width: 180px;
+            padding: 10px 0;
+            margin: 0;
+            list-style: none;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            z-index: 9999;
+            flex-direction: column;
+        }
+
+        /* Стилі для посилань всередині стовпчика */
+        .dropdown-column-menu li a {
+            color: white !important;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            font-weight: bold;
+            transition: background 0.3s, color 0.3s;
+            text-align: center;
+        }
+
+        /* Ефект наведення на пункт у стовпчику */
+        .dropdown-column-menu li a:hover {
+            background-color: #ffcc00 !important;
+            color: #333 !important;
+        }
+
+        /* Головна магія: показуємо стовпчик ТІЛЬКИ при наведенні миші на "Головна" */
+        .dropdown-hover:hover .dropdown-column-menu {
+            display: flex;
+        }
+
+        /* Адаптивність для мобілок (щоб на смартфонах меню теж виглядало адекватно) */
+        @media (max-width: 991px) {
+            .dropdown-column-menu {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                background-color: rgba(0,0,0,0.1);
+                margin-top: 5px;
+            }
+        }
+
+#contact h2 {
+    color: #0b1120 !important;
+}
+
+
+
+
+
+
+
+
+/* --- СТИЛИ ДЛЯ КНОПКИ ПЕРЕКЛЮЧЕНИЯ ТЕМЫ --- */
+
+/* 1. Кнопка по умолчанию (когда тема СВЕТЛАЯ) */
+#themeToggle {
+    background-color: #f1f3f5 !important;       /* Светлый фон */
+    color: #1a2229 !important;                  /* Черный текст */
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 6px !important;
+    padding: 6px 14px !important;
+    font-weight: 500 !important;
+    font-size: 0.9rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    transition: all 0.2s !important;
+}
+
+#themeToggle:hover {
+    background-color: #e2e6ea !important;       /* Чуть темнее при наведении в светлой теме */
+}
+
+/* Автоматическая подстановка иконки солнышка для светлой темы */
+#themeToggle::before {
+    content: "☀️" !important;
+}
+
+
+/* 2. Кнопка, когда активирована ТЕМНАЯ ТЕМА (внутри body.dark-theme) */
+body.dark-theme #themeToggle {
+    background-color: #1a2229 !important;       /* Темный фон */
+    color: white !important;                    /* Белый текст */
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+body.dark-theme #themeToggle:hover {
+    background-color: #25313c !important;       /* Светлее при наведении в темной теме */
+}
+
+/* Автоматическая подмена иконки на луну в темной теме */
+body.dark-theme #themeToggle::before {
+    content: "🌑" !important;
+}
+
+
+
+
+
+
+
+
     </style>
+
+
+
 </head>
 <body>
 
@@ -88,45 +289,97 @@
             </button>
             <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav gap-3 text-center ms-auto">
-                    <li class="nav-item"><a class="custom-btn-style" href="index.html">Головна</a></li>
+                    
+                    <li class="nav-item dropdown-hover">
+                        <a class="custom-btn-style" href="#hero">Головна</a>
+                        <ul class="dropdown-column-menu">
+                            <li><a href="#about">Про мене</a></li>
+                            <li><a href="#skills">Навички</a></li>
+                            <li><a href="#services">Послуги</a></li>
+                            <li><a href="#contact">Контакти</a></li>
+                        </ul>
+                    </li>
+
                     <li class="nav-item"><a class="custom-btn-style" href="portfolio.html">Портфоліо</a></li>
                     <li class="nav-item"><a class="custom-btn-style" href="blog.html">Блог</a></li>
                     <li class="nav-item"><a class="custom-btn-style" href="contact.html">Контакти</a></li>
                     <li class="nav-item d-flex align-items-center ms-lg-3">
-                        <button id="themeToggle" class="btn btn-dark btn-sm">⚪ Темна тема</button>
+                        <button id="themeToggle" class="btn btn-outline-light btn-sm" title="Змінити тему">🌑 Темна тема</button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="hero text-center text-white py-5" style="background-color: #1a4d7a; position: relative; z-index: 1;">
+    <section id="hero" class="hero text-center text-white py-5" style="background-color: #1a4d7a; position: relative; z-index: 1;">
         <div class="container">
-            <h1 class="display-4 animate-fadeInDown">Вітаю! Я — маркетолог та розробник</h1>
+            <h1 class="display-4 animate-fadeInDown">Вітаю! Я — <span id="typingText" class="text-warning"></span><span class="typing-cursor">|</span></h1>
             <p class="lead animate-fadeInDown" style="animation-delay:0.3s">Створюю сучасні рішення для вашого бізнесу</p>
-            <a href="portfolio.html" class="btn btn-warning btn-lg animate-fadeInDown" style="animation-delay:0.6s">Переглянути портфоліо</a>
+            <a href="#services" class="btn btn-warning btn-lg animate-fadeInDown" style="animation-delay:0.6s">Переглянути послуги</a>
         </div>
     </section>
 
-    <section class="py-5" style="background-color: #0b1120; color: white; position: relative; z-index: 1;">
+    <section id="about" class="about-section py-5" style="background-color: #0b1120; color: white; position: relative; z-index: 1;">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <div class="about-card-custom">
                         <h2 class="mb-4" style="color: #ffcc00;">Про мене</h2>
                         <p>Я, <strong>Ілля ГЛАЗУНОВ</strong>, студент КНУ (група М-25). Спеціалізуюся на маркетингу та веб-технологіях.</p>
-                        <p>Мій підхід — це поєднання аналітики та креативу. Я створюю не просто сайти, а інструменти для залучення клієнтів.</p>
+                        <p>Мій підхід — це поєднання аналітики та креативу. Я створюю не просто сайти, а інструменти для залучення клиенів.</p>
                     </div>
                 </div>
-                <div class="col-md-4 mt-4 mt-md-0">
-                    <h3 class="mb-4" style="color: #ffcc00;">Навички</h3>
-                    <div id="skillsList"></div>
+                <div id="skills" class="col-md-5 mt-4 mt-md-0 skills-section">
+                    <h3 class="mb-4" style="color: #ffcc00;">Мої навички</h3>
+                    <div id="skillsList">
+                        
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-bold">HTML5 / CSS3 / LESS</span>
+                                <span class="skill-percent text-warning fw-bold">0%</span>
+                            </div>
+                            <div class="progress" style="height: 25px; background-color: rgba(255,255,255,0.1); border-radius: 50px;">
+                                <div class="progress-bar bg-html text-white fw-bold d-flex align-items-center justify-content-center" data-target="90" style="width: 0%; border-radius: 50px;">0%</div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-bold">Marketing та стратегія</span>
+                                <span class="skill-percent text-warning fw-bold">0%</span>
+                            </div>
+                            <div class="progress" style="height: 25px; background-color: rgba(255,255,255,0.1); border-radius: 50px;">
+                                <div class="progress-bar bg-marketing text-white fw-bold d-flex align-items-center justify-content-center" data-target="85" style="width: 0%; border-radius: 50px;">0%</div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-bold">Bootstrap 5 & JS</span>
+                                <span class="skill-percent text-warning fw-bold">0%</span>
+                            </div>
+                            <div class="progress" style="height: 25px; background-color: rgba(255,255,255,0.1); border-radius: 50px;">
+                                <div class="progress-bar bg-js text-white fw-bold d-flex align-items-center justify-content-center" data-target="75" style="width: 0%; border-radius: 50px;">0%</div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-bold">Аналітика ринку</span>
+                                <span class="skill-percent text-warning fw-bold">0%</span>
+                            </div>
+                            <div class="progress" style="height: 25px; background-color: rgba(255,255,255,0.1); border-radius: 50px;">
+                                <div class="progress-bar bg-analytics text-white fw-bold d-flex align-items-center justify-content-center" data-target="95" style="width: 0%; border-radius: 50px;">0%</div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-5" style="background-color: #e9ecef; position: relative; z-index: 1;">
+    <section id="services" class="blog-section py-5" style="background-color: #e9ecef; position: relative; z-index: 1;">
         <div class="container">
             <h2 class="text-center mb-5 fw-bold" style="color: #0b1120;">Мої Послуги</h2>
             <div class="row g-4">
@@ -142,7 +395,7 @@
                     <div class="card h-100 service-card p-4 text-center shadow-sm">
                         <div class="card-body">
                             <h4 class="mb-3">Веб-розробка</h4>
-                            <p>Створення адаптивних сайтів на Bootstrap з унікальним та функціональним дизайном.</p>
+                            <p>Створення адаптивних сайтів на Bootstrap з унікальним та funktionальним дизайном.</p>
                         </div>
                     </div>
                 </div>
@@ -158,7 +411,7 @@
         </div>
     </section>
 
-    <section class="py-5" style="background-color: #ffffff; position: relative; z-index: 1;">
+    <section id="contact" class="contact-section py-5" style="background-color: #ffffff; position: relative; z-index: 1;">
         <div class="container">
             <h2 class="text-center mb-4">Зв'яжіться зі мною</h2>
             <div class="row justify-content-center">
@@ -234,9 +487,23 @@
         })();
     </script>
     
-     <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="js/storage.js"></script>
+    <script src="js/scroll-reveal.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/typing.js"></script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 
