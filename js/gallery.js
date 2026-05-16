@@ -105,5 +105,3 @@ window.closeLightbox = function() {
 
 // Запуск при завантаженні
 displayProjects();
-
-
